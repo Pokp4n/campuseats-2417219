@@ -10,12 +10,12 @@ function App() {
 
       <main className="container">
         <section>
-          <h2>Today's vendors</h2>
+          <h2 className="section-title">Today's vendors</h2>
           <VendorCard />
         </section>
 
         <section>
-          <h2>Popular items</h2>
+          <h2 className="section-title">Popular items</h2>
           <div className="grid">
             <MenuItemCard />
           </div>

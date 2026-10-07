@@ -1,9 +1,9 @@
 function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="footer">
-      <p>© {currentYear} CampusEats</p>
+      <p>
+        &copy; {new Date().getFullYear()} CampusEats &middot; BICS 3301, IIUM
+      </p>
     </footer>
   );
 }
