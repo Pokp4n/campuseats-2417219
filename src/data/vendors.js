@@ -1,4 +1,4 @@
-export const vendors = [
+const vendors = [
   {
     id: 1,
     name: "Cafe Mahallah Zubair",
@@ -6,7 +6,7 @@ export const vendors = [
     openHours: "8:00 AM - 11:00 PM",
     isOpen: true,
 
-    items: [
+    menu: [
       {
         id: 1,
         name: "Nasi Bangla",
@@ -40,7 +40,8 @@ export const vendors = [
     location: "Mahallah Aminah",
     openHours: "7:00 am - 10:00 pm",
     isOpen: true,
-    items: [
+
+    menu: [
       {
         id: 1,
         name: "Mee Goreng",
@@ -52,3 +53,5 @@ export const vendors = [
     ],
   },
 ];
+
+export default vendors;

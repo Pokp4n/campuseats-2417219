@@ -140,3 +140,41 @@ body {
   padding: 2rem 1rem;
   font-size: 0.85rem;
 }
+
+/* Week 2 additions */
+.vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+button.card {
+  border: 2px solid transparent;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+button.card:hover {
+  border-color: var(--green);
+}
+
+button.card.selected {
+  border-color: var(--green);
+  background: var(--green-light);
+}
+
+.card h3 {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
