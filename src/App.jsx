@@ -1,9 +1,12 @@
 import Header from "./components/Header.jsx";
 import VendorCard from "./components/VendorCard.jsx";
-import MenuItemCard from "./components/MenuItemCard.jsx";
+import MenuList from "./components/MenuList.jsx";
 import Footer from "./components/Footer.jsx";
+import { vendors } from "./data/vendors.js";
 
 function App() {
+  const vendor = vendors[0];
+
   return (
     <>
       <Header />
@@ -15,10 +18,8 @@ function App() {
         </section>
 
         <section>
-          <h2 className="section-title">Popular items</h2>
-          <div className="grid">
-            <MenuItemCard />
-          </div>
+          <h2 className="section-title">{vendor.name} menu</h2>
+          <MenuList items={vendor.items} />
         </section>
       </main>
       <Footer />
