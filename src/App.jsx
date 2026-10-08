@@ -11,8 +11,9 @@ function App() {
   const selectedVendor = vendors.find((v) => v.id === selectedVendorId);
 
   function handleAddToCart(item) {
-    setCart([...cart, item]);
+    setCart((prevCart) => [...prevCart, item]);
   }
+
   return (
     <>
       <Header cartCount={cart.length} />
