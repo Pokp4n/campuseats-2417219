@@ -11,5 +11,12 @@
 
 - Tool(s): ChatGPT
 - What I asked for: I asked for clarification about React props, state, map(), and the add-to-cart function.
-- What I kept, changed or rejected, and why: I used the explanations that helped me to understand more about the concepts and keep followed the lab instructions for the implementation.
+- What I kept, changed or rejected, and why: I used the explanations to helped me to understand more about the concepts and keep followed the lab instructions for the implementation.
 - One thing the AI got wrong and how I fixed it: Some suggested variable names were different from the lab sheet, so I corrected them by referring to the lecturer's instructions.
+
+## Week 3
+
+- Tool(s): ChatGPT
+  What I asked for: I asked for clarification about fetching JSON data, cart functions, and menu sorting.
+- What I kept, changed or rejected, and why: I used some explanations to helped me to understand the code better while following the lab instructions.
+- One thing the AI got wrong and how I fixed it: The AI suggested placing the sorting code in the wrong position, so I corrected it and tested it again.
