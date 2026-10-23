@@ -12,8 +12,7 @@
         "description": "Blue rice served with grilled chicken, fresh herbs, sambal and budu.",
         "price": 10,
         "category": "Rice",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2417219-2",
@@ -21,8 +20,7 @@
         "description": "White rice served with Kelantan-style fish curry.",
         "price": 7,
         "category": "Rice",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2417219-3",
@@ -30,8 +28,7 @@
         "description": "Traditional layered rice wrapped in banana leaves with assorted fillings.",
         "price": 6,
         "category": "Rice",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2417219-4",
@@ -39,8 +36,7 @@
         "description": "Soft rice noodle rolls served with creamy fish gravy and fresh vegetables.",
         "price": 7,
         "category": "Noodles",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2417219-5",
@@ -48,8 +44,7 @@
         "description": "Rice noodles served with rich coconut fish gravy and fresh herbs.",
         "price": 7,
         "category": "Noodles",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2417219-6",
@@ -57,8 +52,7 @@
         "description": "Green chillies stuffed with seasoned fish and grated coconut.",
         "price": 4,
         "category": "Snacks",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2417219-7",
@@ -66,8 +60,7 @@
         "description": "Grilled glutinous rice wrapped in banana leaves with spicy coconut filling.",
         "price": 3,
         "category": "Snacks",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2417219-8",
@@ -75,8 +68,7 @@
         "description": "Traditional sweet dessert made with eggs, coconut milk and palm sugar.",
         "price": 3.5,
         "category": "Desserts",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2417219-9",
@@ -84,8 +76,7 @@
         "description": "Traditional golden egg-thread dessert cooked in sugar syrup.",
         "price": 4,
         "category": "Desserts",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2417219-10",
@@ -93,8 +84,7 @@
         "description": "Traditional Kelantanese sponge dessert served in sweet syrup.",
         "price": 4,
         "category": "Desserts",
-        "available": true,
-        "popularity": 80
+        "available": true
       }
     ]
   },
@@ -111,8 +101,7 @@
         "description": "Fried fish finger with chili sauce",
         "price": 7.5,
         "category": "Snack",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2416443-2",
@@ -120,8 +109,7 @@
         "description": "Nasi lemak served with fried fish and sambal",
         "price": 7.5,
         "category": "Rice",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2416443-3",
@@ -129,8 +117,7 @@
         "description": "Nasi dagang served with gravy of fish",
         "price": 9.5,
         "category": "Rice",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2416443-4",
@@ -138,8 +125,7 @@
         "description": "White noodles with fish sauce",
         "price": 6,
         "category": "Noodles",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2416443-5",
@@ -147,8 +133,7 @@
         "description": "Classic Malaysian iced pulled milk tea",
         "price": 2.5,
         "category": "Beverages",
-        "available": true,
-        "popularity": 80
+        "available": true
       }
     ]
   },
@@ -165,8 +150,7 @@
         "description": "Smashed fried chicken with sambal and rice",
         "price": 8.0,
         "category": "Rice",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2419247-my-2",
@@ -174,8 +158,7 @@
         "description": "Flaky flatbread with curry",
         "price": 1.2,
         "category": "Roti/Bread",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2419247-my-3",
@@ -183,8 +166,7 @@
         "description": "Grilled chicken chop with vegetables",
         "price": 8.0,
         "category": "Western",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2419247-my-4",
@@ -192,8 +174,7 @@
         "description": "Coconut rice served with sambal and egg",
         "price": 4.5,
         "category": "Rice",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2419247-my-5",
@@ -201,8 +182,7 @@
         "description": "Mixed rice with various side dishes",
         "price": 5.5,
         "category": "Rice",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2419247-my-6",
@@ -210,8 +190,7 @@
         "description": "Stir-fried instant noodles",
         "price": 4.0,
         "category": "Noodles",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2419247-my-7",
@@ -219,8 +198,7 @@
         "description": "Flaky flatbread with egg",
         "price": 2.5,
         "category": "Roti/Bread",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2419247-my-8",
@@ -228,8 +206,7 @@
         "description": "Iced chocolate malt drink",
         "price": 2.5,
         "category": "Drinks",
-        "available": true,
-        "popularity": 80
+        "available": true
       },
       {
         "id": "2419247-my-9",
@@ -237,8 +214,7 @@
         "description": "Sweetened tea with milk",
         "price": 2.0,
         "category": "Drinks",
-        "available": false,
-        "popularity": 80
+        "available": false
       }
     ]
   }
@@ -246,5 +222,6 @@
 ;
 
 export default vendors;
+
 
 

@@ -74,17 +74,6 @@ function App() {
         <section>
           <h2 className="section-title">Menu: {selectedVendor.name}</h2>
 
-          {/* Extra feature: Sorting dropdown */}
-          <div className="sort-container">
-            <label htmlFor="sort-menu">Sort by: </label>
-
-            <select id="sort-menu" defaultValue="default">
-              <option value="default">Default</option>
-              <option value="price">Price</option>
-              <option value="popularity">Popularity</option>
-            </select>
-          </div>
-
           <MenuList items={selectedVendor.menu} onAdd={handleAddToCart} />
         </section>
       </main>
