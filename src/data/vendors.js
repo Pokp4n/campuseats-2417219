@@ -1,57 +1,224 @@
-const vendors = [
+﻿const vendors = [
   {
-    id: 1,
-    name: "Cafe Mahallah Zubair",
-    location: "Mahallah Zubair, International Islamic University Malaysia",
-    openHours: "8:00 AM - 11:00 PM",
-    isOpen: true,
-
-    menu: [
+    "id": "2417219-pokpan",
+    "name": "Pokpan's Kitchen",
+    "location": "Mahallah Zubair, Block J",
+    "openHours": "9:00 AM - 10:00 PM",
+    "isOpen": true,
+    "menu": [
       {
-        id: 1,
-        name: "Nasi Bangla",
-        description: "Rice served with chicken and kuah kari",
-        price: 5.0,
-        category: "Rice",
-        available: true,
+        "id": "2417219-1",
+        "name": "Nasi Kerabu Ayam Bakar",
+        "description": "Blue rice served with grilled chicken, fresh herbs, sambal and budu.",
+        "price": 10,
+        "category": "Rice",
+        "available": true
       },
       {
-        id: 2,
-        name: "Mix Chicken",
-        description:
-          "Combination of fried chicken and potato wedges served with sauce",
-        price: 6.5,
-        category: "Chicken",
-        available: true,
+        "id": "2417219-2",
+        "name": "Nasi Berlauk Gulai Ikan",
+        "description": "White rice served with Kelantan-style fish curry.",
+        "price": 7,
+        "category": "Rice",
+        "available": true
       },
       {
-        id: 3,
-        name: "Chicken Wrap",
-        description: "Fried chicken wrapped in a tortilla with vegetables",
-        price: 6.0,
-        category: "Wraps",
-        available: false,
+        "id": "2417219-3",
+        "name": "Nasi Tumpang",
+        "description": "Traditional layered rice wrapped in banana leaves with assorted fillings.",
+        "price": 6,
+        "category": "Rice",
+        "available": true
       },
-    ],
+      {
+        "id": "2417219-4",
+        "name": "Laksam Kelantan",
+        "description": "Soft rice noodle rolls served with creamy fish gravy and fresh vegetables.",
+        "price": 7,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "2417219-5",
+        "name": "Laksa Kelantan",
+        "description": "Rice noodles served with rich coconut fish gravy and fresh herbs.",
+        "price": 7,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "2417219-6",
+        "name": "Solok Lada",
+        "description": "Green chillies stuffed with seasoned fish and grated coconut.",
+        "price": 4,
+        "category": "Snacks",
+        "available": true
+      },
+      {
+        "id": "2417219-7",
+        "name": "Pulut Panggang",
+        "description": "Grilled glutinous rice wrapped in banana leaves with spicy coconut filling.",
+        "price": 3,
+        "category": "Snacks",
+        "available": true
+      },
+      {
+        "id": "2417219-8",
+        "name": "Akok Kelantan",
+        "description": "Traditional sweet dessert made with eggs, coconut milk and palm sugar.",
+        "price": 3.5,
+        "category": "Desserts",
+        "available": true
+      },
+      {
+        "id": "2417219-9",
+        "name": "Jala Mas",
+        "description": "Traditional golden egg-thread dessert cooked in sugar syrup.",
+        "price": 4,
+        "category": "Desserts",
+        "available": true
+      },
+      {
+        "id": "2417219-10",
+        "name": "Nekbat",
+        "description": "Traditional Kelantanese sponge dessert served in sweet syrup.",
+        "price": 4,
+        "category": "Desserts",
+        "available": true
+      }
+    ]
   },
   {
-    id: 2,
-    name: "Kafe Mahallah Aminah",
-    location: "Mahallah Aminah",
-    openHours: "7:00 am - 10:00 pm",
-    isOpen: true,
-
-    menu: [
+    "id": "2416443-kafe",
+    "name": "Kafe Dinie Masakang Pantai Timur",
+    "location": "Mahallah Ali, Block C",
+    "openHours": "7:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
       {
-        id: 1,
-        name: "Mee Goreng",
-        description: "Fried noodles with vegetables and egg",
-        price: 5.0,
-        category: "Noodles",
-        available: true,
+        "id": "2416443-1",
+        "name": "Keropok lekor",
+        "description": "Fried fish finger with chili sauce",
+        "price": 7.5,
+        "category": "Snack",
+        "available": true
       },
-    ],
+      {
+        "id": "2416443-2",
+        "name": "Nasi Lemak Ikan",
+        "description": "Nasi lemak served with fried fish and sambal",
+        "price": 7.5,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "2416443-3",
+        "name": "Nasi Dagang",
+        "description": "Nasi dagang served with gravy of fish",
+        "price": 9.5,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "2416443-4",
+        "name": "Laksam Kelantan",
+        "description": "White noodles with fish sauce",
+        "price": 6,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "2416443-5",
+        "name": "Teh Tarik Ice",
+        "description": "Classic Malaysian iced pulled milk tea",
+        "price": 2.5,
+        "category": "Beverages",
+        "available": true
+      }
+    ]
   },
-];
+  {
+    "id": "2419247-my-restaurant",
+    "name": "Kafe Mahallah Zubair",
+    "location": "Mahallah Zubair, Ground Floor",
+    "openHours": "7:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2419247-my-1",
+        "name": "Nasi Ayam Gepuk",
+        "description": "Smashed fried chicken with sambal and rice",
+        "price": 8.0,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "2419247-my-2",
+        "name": "Roti Canai",
+        "description": "Flaky flatbread with curry",
+        "price": 1.2,
+        "category": "Roti/Bread",
+        "available": true
+      },
+      {
+        "id": "2419247-my-3",
+        "name": "Chicken Chop",
+        "description": "Grilled chicken chop with vegetables",
+        "price": 8.0,
+        "category": "Western",
+        "available": true
+      },
+      {
+        "id": "2419247-my-4",
+        "name": "Nasi Lemak",
+        "description": "Coconut rice served with sambal and egg",
+        "price": 4.5,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "2419247-my-5",
+        "name": "Nasi Campur",
+        "description": "Mixed rice with various side dishes",
+        "price": 5.5,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "2419247-my-6",
+        "name": "Maggi Goreng",
+        "description": "Stir-fried instant noodles",
+        "price": 4.0,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "2419247-my-7",
+        "name": "Roti Telur",
+        "description": "Flaky flatbread with egg",
+        "price": 2.5,
+        "category": "Roti/Bread",
+        "available": true
+      },
+      {
+        "id": "2419247-my-8",
+        "name": "Milo Ais",
+        "description": "Iced chocolate malt drink",
+        "price": 2.5,
+        "category": "Drinks",
+        "available": true
+      },
+      {
+        "id": "2419247-my-9",
+        "name": "Teh Tarik",
+        "description": "Sweetened tea with milk",
+        "price": 2.0,
+        "category": "Drinks",
+        "available": false
+      }
+    ]
+  }
+]
+;
 
 export default vendors;
