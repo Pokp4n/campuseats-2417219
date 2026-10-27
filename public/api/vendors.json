@@ -217,5 +217,78 @@
         "available": false
       }
     ]
+  },
+  {
+    "id": "2410509-Maju",
+    "name": "Restoran Maju",
+    "location": "Gombak, Selangor",
+    "openHours": "7:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2410509-Maju-1",
+        "name": "Pizza Pepperoni",
+        "description": "Delicious pizza with beef pepperoni and mozzarella cheese",
+        "price": 11.0,
+        "category": "Pizza",
+        "available": true
+      },
+      {
+        "id": "2410509-Maju-2",
+        "name": "Mi Bandung",
+        "description": "Delicious mi bandung with rich gravy and beef",
+        "price": 6.0,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "2410509-Maju-3",
+        "name": "Mi Goreng Mamak",
+        "description": "Your typical mi goreng mamak kaw with fried tofu and eggs",
+        "price": 6.0,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "2410509-Maju-4",
+        "name": "Kuey Teow Goreng",
+        "description": "Stir-fried flat rice noodles with prawns and bean sprouts",
+        "price": 6.5,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "2410509-Maju-5",
+        "name": "Nasi Goreng Kampung",
+        "description": "Traditional fried rice with anchovies, water spinach, and chili",
+        "price": 7.0,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "2410509-Maju-6",
+        "name": "Nasi Ayam Penyet",
+        "description": "Smashed fried chicken served with spicy sambal, cucumber, and rice",
+        "price": 9.5,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "2410509-Maju-7",
+        "name": "Air Teh O Ais Limau",
+        "description": "Refreshing iced tea with fresh lime juice",
+        "price": 3.0,
+        "category": "Drinks",
+        "available": false
+      },
+      {
+        "id": "2410509-Maju-8",
+        "name": "Teh Tarik Ais",
+        "description": "Classic Malaysian frothy iced milk tea",
+        "price": 2.5,
+        "category": "Drinks",
+        "available": true
+      }
+    ]
   }
 ]
