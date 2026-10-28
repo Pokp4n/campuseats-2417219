@@ -1,10 +1,13 @@
-import { Link, useParams } from "react-router";
+import { Link, useParams, useOutletContext } from "react-router";
 import { useVendors } from "../hooks/useVendors.js";
 import MenuList from "../components/MenuList.jsx";
 
 function VendorPage() {
   const { id } = useParams();
+
   const { vendors, loading, error, reload } = useVendors();
+
+  const { recordView } = useOutletContext();
 
   const vendor = vendors.find((v) => v.id === id);
 
@@ -33,6 +36,10 @@ function VendorPage() {
     );
   }
 
+  function handleViewItem(item) {
+    recordView(item, vendor);
+  }
+
   return (
     <section>
       <h2 className="section-title">Menu: {vendor.name}</h2>
@@ -40,7 +47,7 @@ function VendorPage() {
       <p className="muted">{vendor.location}</p>
       <p className="muted">Open: {vendor.openHours}</p>
 
-      <MenuList items={vendor.menu} />
+      <MenuList items={vendor.menu} onView={handleViewItem} />
 
       <p>
         <Link to="/">Back to Vendors</Link>
