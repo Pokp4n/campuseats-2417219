@@ -2,7 +2,7 @@
 
 ## 1. What is the difference between imperative and declarative UI?
 
-Imperative UI tells that the program step by step how to change the interface, while declarative UI describes what the interface should look like. So, react uses declarative UI because we want to describe the UI using components and JSX.
+Imperative UI basically tells that the program step by step how to change the interface, while declarative UI describes what the interface should look like. So, react uses declarative UI because we want to describe the UI using components and JSX.
 
 ## 2. Why must a React component name start with a capital letter?
 

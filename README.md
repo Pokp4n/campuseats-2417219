@@ -1,16 +1,66 @@
-# React + Vite
+# CampusEats
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CampusEats is a React-based food ordering web application developed for BICS 3301 Cross-Platform Software Development at IIUM.
 
-Currently, two official plugins are available:
+The application allows users to browse restaurants, view menus, add food items to a cart, place orders, and view their order history.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## My Shop
 
-## React Compiler
+**Shop Name:** Pokpan's Kitchen
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Owner Matric Number:** 2417219
 
-## Expanding the ESLint configuration
+**Location:** Mahallah Zubair, Block J, IIUM
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Pokpan's Kitchen offers Kelantanese food, including rice dishes, noodles, snacks, and traditional desserts.
+
+The shop contains 10 menu items across 4 categories.
+
+## Other Vendors and Credits
+
+The following vendors' data was contributed by classmates:
+
+- Kafe Dinie Masakang Pantai Timur — 2416443
+- Kafe Mahallah Zubair — 2419247
+- Restoran Maju — 2410509
+
+Only the restaurant and menu data was shared. The React application code and components were developed for my own CampusEats project.
+
+## Features
+
+- Display restaurants and their menus
+- Add and remove food items from the cart
+- Update item quantities and calculate total prices
+- Checkout form with validation
+- Save cart and order history using localStorage
+- Navigate between pages using React Router
+- Recently Viewed menu items (personal feature)
+
+## Technologies Used
+
+- React
+- JavaScript and JSX
+- Vite
+- React Router
+- CSS
+- JSON and localStorage
+
+## How to Run
+
+Install the project dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+
+Build the application:
+
+npm run build
+
+## Course Information
+
+BICS 3301 - Cross-Platform Software Development
+
+International Islamic University Malaysia (IIUM)
