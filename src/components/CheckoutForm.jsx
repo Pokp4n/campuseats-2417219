@@ -35,47 +35,76 @@ function CheckoutForm({ onSubmit, onBack }) {
   }
 
   return (
-    <section>
-      <h2 className="section-title">Checkout</h2>
+    <section className="checkout-panel">
+      <h2 className="section-title">Checkout Details</h2>
 
-      <form onSubmit={handleSubmit} noValidate>
-        <div>
+      <form className="checkout-form" onSubmit={handleSubmit} noValidate>
+        <div className="form-group">
           <label htmlFor="customer-name">Full Name</label>
           <input
+            className="form-input"
             id="customer-name"
             type="text"
+            placeholder="Enter your full name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? "name-error" : undefined}
           />
-          {errors.name && <p role="alert">{errors.name}</p>}
+          {errors.name && (
+            <p id="name-error" className="form-error" role="alert">
+              {errors.name}
+            </p>
+          )}
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="customer-phone">Phone Number</label>
           <input
+            className="form-input"
             id="customer-phone"
             type="tel"
+            placeholder="e.g. 0123456789"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
+            aria-invalid={Boolean(errors.phone)}
+            aria-describedby={errors.phone ? "phone-error" : undefined}
           />
-          {errors.phone && <p role="alert">{errors.phone}</p>}
+          {errors.phone && (
+            <p id="phone-error" className="form-error" role="alert">
+              {errors.phone}
+            </p>
+          )}
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="pickup-location">Pickup Location</label>
           <input
+            className="form-input"
             id="pickup-location"
             type="text"
+            placeholder="e.g. Mahallah Zubair"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
+            aria-invalid={Boolean(errors.location)}
+            aria-describedby={errors.location ? "location-error" : undefined}
           />
-          {errors.location && <p role="alert">{errors.location}</p>}
+          {errors.location && (
+            <p id="location-error" className="form-error" role="alert">
+              {errors.location}
+            </p>
+          )}
         </div>
 
-        <button type="submit">Place Order</button>
-        <button type="button" onClick={onBack}>
-          Back to Cart
-        </button>
+        <div className="checkout-actions">
+          <button className="btn" type="submit">
+            Place Order
+          </button>
+
+          <button className="btn-secondary" type="button" onClick={onBack}>
+            Back to Cart
+          </button>
+        </div>
       </form>
     </section>
   );
