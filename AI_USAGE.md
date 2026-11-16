@@ -27,3 +27,10 @@
 - What I asked for: I asked for help understanding more about custom hooks, Cart Context, React Router, and also how to create the Recently Viewed feature.
 - What I kept, changed or rejected, and why: I used the suggested code and explanations that followed the lecturer's lab instructions. I also tested the cart, page navigation, and Recently Viewed feature to make sure everything worked correctly.
 - One thing the AI got wrong and how I fixed it: The AI initially said the Cart Context components were done before they were connected to App.jsx. I checked the lab requirements and completed the routing and provider setup before testing the cart again.
+
+## Week 5
+
+- Tool(s): ChatGPT
+- What I asked for: I asked for guidance on Firebase setup, authentication, protected routes, and updating my Recently Viewed feature for different users.
+- What I kept, changed or rejected, and why: I used the suggested code that followed the lecturer's Lab 5 instructions and adjusted the login page styling. I also tested the features to ensure everything worked correctly.
+- One thing the AI got wrong and how I fixed it: The AI initially suggested adding unnecessary details to README.md. I checked the lecturer's pre-work document and corrected it to include only the required Firebase Project ID.
