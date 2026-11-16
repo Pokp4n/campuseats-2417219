@@ -64,3 +64,7 @@ npm run build
 BICS 3301 - Cross-Platform Software Development
 
 International Islamic University Malaysia (IIUM)
+
+## Firebase Setup
+
+Firebase project ID: campuseats-2417219
