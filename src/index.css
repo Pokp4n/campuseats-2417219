@@ -452,3 +452,89 @@ button.card.selected {
     font-size: 1.2rem;
   }
 }
+
+/* Week 5 - Firebase Authentication Pages */
+
+.auth-page {
+  max-width: 440px;
+  margin: 3rem auto;
+}
+
+.auth-page .form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 2rem;
+}
+
+.auth-page h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.auth-page label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.auth-page input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+  color: var(--text);
+}
+
+.auth-page input:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+  border-color: var(--green);
+}
+
+.auth-page .btn {
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+.auth-page .btn-outline {
+  background: #fff;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.auth-page .btn-outline:hover {
+  background: var(--green-light);
+}
+
+.auth-page .muted {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.auth-page .muted a {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.auth-page .field-error {
+  color: #b3261e;
+  background: #fdecea;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    margin: 1.5rem auto;
+  }
+
+  .auth-page .form {
+    padding: 1.25rem;
+  }
+}
