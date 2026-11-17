@@ -34,3 +34,10 @@
 - What I asked for: I asked for guidance on Firebase setup, authentication, protected routes, and updating my Recently Viewed feature for different users.
 - What I kept, changed or rejected, and why: I used the suggested code that followed the lecturer's Lab 5 instructions and adjusted the login page styling. I also tested the features to ensure everything worked correctly.
 - One thing the AI got wrong and how I fixed it: The AI initially suggested adding unnecessary details to README.md. I checked the lecturer's pre-work document and corrected it to include only the required Firebase Project ID.
+
+## Week 6
+
+- Tool(s): ChatGPT
+- What I asked for: I asked for guidance on Firestore setup, CRUD operations, real-time updates, and moving my Recently Viewed feature to Firestore.
+- What I kept, changed or rejected, and why: I followed the lecturer's Lab 6 instructions with AI guidance and adjusted the code to fit my existing CampusEats project. I also tested the features to make sure they worked correctly.
+- One thing the AI got wrong and how I fixed it: The AI initially suggested CSS that made the Save Time button too wide. I fixed it by adjusting the button styling to match my application.
