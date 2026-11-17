@@ -7,16 +7,9 @@ function Header() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  // Log out and remove the user's recently viewed history
+  // Log out without deleting Firestore Recently Viewed history
   async function handleLogout() {
-    const userId = user?.uid;
-
     await logout();
-
-    if (userId) {
-      localStorage.removeItem(`ce-recent-${userId}`);
-    }
-
     navigate("/");
   }
 

@@ -1,39 +1,59 @@
-import { useLocalStorage } from "./useLocalStorage.js";
+import { useEffect, useState } from "react";
 
-const MAX_RECENT_ITEMS = 5;
+import {
+  subscribeToRecent,
+  recordRecent,
+  clearRecent,
+} from "../services/recent.js";
 
 export function useRecentlyViewed(userId) {
-  // Each signed-in user gets a separate storage key
-  const storageKey = `ce-recent-${userId}`;
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
+  const [recentError, setRecentError] = useState(null);
 
-  const [recentlyViewed, setRecentlyViewed] = useLocalStorage(storageKey, []);
+  // READ: Listen to the user's history in Firestore
+  useEffect(() => {
+    if (!userId) return;
 
+    const unsubscribe = subscribeToRecent(
+      userId,
+      (items) => {
+        setRecentlyViewed(items);
+        setRecentError(null);
+      },
+      (err) => {
+        setRecentError(err.message);
+        console.error("Could not load recent history:", err);
+      },
+    );
+
+    // Stop listening when the user changes or leaves
+    return unsubscribe;
+  }, [userId]);
+
+  // CREATE / UPDATE: Record a viewed menu item
   function recordView(item, vendor) {
-    const newEntry = {
-      itemId: item.id,
-      itemName: item.name,
-      vendorId: vendor.id,
-      vendorName: vendor.name,
-    };
+    if (!userId) return;
 
-    setRecentlyViewed((previous) => {
-      // Remove the item if it already exists in history
-      const withoutDuplicate = previous.filter(
-        (entry) => !(entry.itemId === item.id && entry.vendorId === vendor.id),
-      );
-
-      // Add the newest item first, keeping only five items
-      return [newEntry, ...withoutDuplicate].slice(0, MAX_RECENT_ITEMS);
+    recordRecent(userId, item, vendor).catch((err) => {
+      setRecentError(err.message);
+      console.error("Could not record viewed item:", err);
     });
   }
 
+  // CLEAR: Remove all items from the cloud history
   function clearRecentlyViewed() {
-    setRecentlyViewed([]);
+    if (!userId) return;
+
+    clearRecent(userId).catch((err) => {
+      setRecentError(err.message);
+      console.error("Could not clear recent history:", err);
+    });
   }
 
   return {
     recentlyViewed,
     recordView,
     clearRecentlyViewed,
+    recentError,
   };
 }
