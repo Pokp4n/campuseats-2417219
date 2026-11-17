@@ -1,21 +1,36 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
+
 import { useCart } from "../hooks/useCart.js";
+import { useAuth } from "../hooks/useAuth.js";
+import { placeOrders } from "../services/orders.js";
+
 import CartItem from "../components/CartItem.jsx";
 import CheckoutForm from "../components/CheckoutForm.jsx";
 
 function CartPage() {
-  const { cart, total, changeQty, removeFromCart, placeOrder } = useCart();
+  const { cart, total, changeQty, removeFromCart, clearCart } = useCart();
 
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   const [showCheckout, setShowCheckout] = useState(false);
+  const [error, setError] = useState("");
 
-  function handlePlaceOrder(details) {
-    const success = placeOrder(details);
+  // CREATE: Save orders to Firestore
+  async function handlePlaceOrder(details) {
+    setError("");
 
-    if (success) {
+    try {
+      await placeOrders(user, cart, details);
+
+      // Clear the cart only when the order is saved
+      clearCart();
+
+      // Go to the student's orders page
       navigate("/orders");
+    } catch (err) {
+      setError(`Could not place the order: ${err.message}`);
     }
   }
 
@@ -47,10 +62,19 @@ function CartPage() {
           </div>
 
           {showCheckout ? (
-            <CheckoutForm
-              onSubmit={handlePlaceOrder}
-              onBack={() => setShowCheckout(false)}
-            />
+            <>
+              {error && (
+                <p className="form-error" role="alert">
+                  {error}
+                </p>
+              )}
+
+              <CheckoutForm
+                defaultName={user?.displayName ?? ""}
+                onSubmit={handlePlaceOrder}
+                onBack={() => setShowCheckout(false)}
+              />
+            </>
           ) : (
             <div className="cart-page-actions">
               <button

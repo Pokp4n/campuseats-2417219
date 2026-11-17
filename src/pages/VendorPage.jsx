@@ -1,15 +1,15 @@
 import { Link, useParams, useOutletContext } from "react-router";
-import { useVendors } from "../hooks/useVendors.js";
+import { useVendor } from "../hooks/useVendor.js";
 import MenuList from "../components/MenuList.jsx";
 
 function VendorPage() {
   const { id } = useParams();
 
-  const { vendors, loading, error, reload } = useVendors();
+  // Get this vendor and its menu from Firestore
+  const { vendor, menu, loading, error } = useVendor(id);
 
+  // Keep our Week 5 Recently Viewed feature
   const { recordView } = useOutletContext();
-
-  const vendor = vendors.find((v) => v.id === id);
 
   if (loading) {
     return <p>Loading menu...</p>;
@@ -19,7 +19,7 @@ function VendorPage() {
     return (
       <section>
         <p role="alert">Error: {error}</p>
-        <button type="button" onClick={reload}>
+        <button type="button" onClick={() => window.location.reload()}>
           Try again
         </button>
       </section>
@@ -36,6 +36,13 @@ function VendorPage() {
     );
   }
 
+  // Include vendor name so the cart knows the item's shop
+  const items = menu.map((item) => ({
+    ...item,
+    vendorName: vendor.name,
+  }));
+
+  // Record an item when its name is clicked
   function handleViewItem(item) {
     recordView(item, vendor);
   }
@@ -47,7 +54,7 @@ function VendorPage() {
       <p className="muted">{vendor.location}</p>
       <p className="muted">Open: {vendor.openHours}</p>
 
-      <MenuList items={vendor.menu} onView={handleViewItem} />
+      <MenuList items={items} onView={handleViewItem} />
 
       <p>
         <Link to="/">Back to Vendors</Link>

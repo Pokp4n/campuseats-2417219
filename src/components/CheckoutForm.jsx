@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function CheckoutForm({ onSubmit, onBack }) {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [location, setLocation] = useState("");
+function CheckoutForm({ defaultName = "", onSubmit, onBack }) {
+  const [name, setName] = useState(defaultName);
+  const [mahallah, setMahallah] = useState("");
+  const [pickupTime, setPickupTime] = useState("");
   const [errors, setErrors] = useState({});
 
   function handleSubmit(e) {
@@ -11,25 +11,30 @@ function CheckoutForm({ onSubmit, onBack }) {
 
     const newErrors = {};
 
+    // Validate student name
     if (!name.trim()) {
       newErrors.name = "Name is required.";
     }
 
-    if (!/^[0-9]{10,11}$/.test(phone)) {
-      newErrors.phone = "Enter a valid 10-11 digit phone number.";
+    // Validate mahallah
+    if (!mahallah.trim()) {
+      newErrors.mahallah = "Mahallah is required.";
     }
 
-    if (!location.trim()) {
-      newErrors.location = "Pickup location is required.";
+    // Validate pickup time
+    if (!pickupTime || pickupTime < "07:00" || pickupTime > "22:00") {
+      newErrors.pickupTime =
+        "Pickup time must be between 7:00 AM and 10:00 PM.";
     }
 
     setErrors(newErrors);
 
+    // Submit only when there are no errors
     if (Object.keys(newErrors).length === 0) {
       onSubmit({
         name: name.trim(),
-        phone,
-        location: location.trim(),
+        mahallah: mahallah.trim(),
+        pickupTime,
       });
     }
   }
@@ -39,8 +44,10 @@ function CheckoutForm({ onSubmit, onBack }) {
       <h2 className="section-title">Checkout Details</h2>
 
       <form className="checkout-form" onSubmit={handleSubmit} noValidate>
+        {/* Student Name */}
         <div className="form-group">
           <label htmlFor="customer-name">Full Name</label>
+
           <input
             className="form-input"
             id="customer-name"
@@ -49,53 +56,59 @@ function CheckoutForm({ onSubmit, onBack }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             aria-invalid={Boolean(errors.name)}
-            aria-describedby={errors.name ? "name-error" : undefined}
           />
+
           {errors.name && (
-            <p id="name-error" className="form-error" role="alert">
+            <p className="form-error" role="alert">
               {errors.name}
             </p>
           )}
         </div>
 
+        {/* Mahallah */}
         <div className="form-group">
-          <label htmlFor="customer-phone">Phone Number</label>
-          <input
-            className="form-input"
-            id="customer-phone"
-            type="tel"
-            placeholder="e.g. 0123456789"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            aria-invalid={Boolean(errors.phone)}
-            aria-describedby={errors.phone ? "phone-error" : undefined}
-          />
-          {errors.phone && (
-            <p id="phone-error" className="form-error" role="alert">
-              {errors.phone}
-            </p>
-          )}
-        </div>
+          <label htmlFor="customer-mahallah">Mahallah</label>
 
-        <div className="form-group">
-          <label htmlFor="pickup-location">Pickup Location</label>
           <input
             className="form-input"
-            id="pickup-location"
+            id="customer-mahallah"
             type="text"
             placeholder="e.g. Mahallah Zubair"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            aria-invalid={Boolean(errors.location)}
-            aria-describedby={errors.location ? "location-error" : undefined}
+            value={mahallah}
+            onChange={(e) => setMahallah(e.target.value)}
+            aria-invalid={Boolean(errors.mahallah)}
           />
-          {errors.location && (
-            <p id="location-error" className="form-error" role="alert">
-              {errors.location}
+
+          {errors.mahallah && (
+            <p className="form-error" role="alert">
+              {errors.mahallah}
             </p>
           )}
         </div>
 
+        {/* Pickup Time */}
+        <div className="form-group">
+          <label htmlFor="pickup-time">Pickup Time</label>
+
+          <input
+            className="form-input"
+            id="pickup-time"
+            type="time"
+            min="07:00"
+            max="22:00"
+            value={pickupTime}
+            onChange={(e) => setPickupTime(e.target.value)}
+            aria-invalid={Boolean(errors.pickupTime)}
+          />
+
+          {errors.pickupTime && (
+            <p className="form-error" role="alert">
+              {errors.pickupTime}
+            </p>
+          )}
+        </div>
+
+        {/* Checkout Buttons */}
         <div className="checkout-actions">
           <button className="btn" type="submit">
             Place Order

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { subscribeToVendors } from "../services/vendors.js";
 
 export function useVendors() {
   const [vendors, setVendors] = useState([]);
@@ -6,37 +7,24 @@ export function useVendors() {
   const [error, setError] = useState(null);
   const [reloadKey, setReloadKey] = useState(0);
 
+  // READ: Listen to vendors in Firestore
   useEffect(() => {
-    const controller = new AbortController();
+    const unsubscribe = subscribeToVendors(
+      (data) => {
+        setVendors(data);
+        setError(null);
+        setLoading(false);
+      },
+      (err) => {
+        setError(err.message);
+        setLoading(false);
+      },
+    );
 
-    fetch("/api/vendors.json", {
-      signal: controller.signal,
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        if (!controller.signal.aborted) {
-          setVendors(data);
-        }
-      })
-      .catch((err) => {
-        if (err.name !== "AbortError") {
-          setError(err.message);
-        }
-      })
-      .finally(() => {
-        if (!controller.signal.aborted) {
-          setLoading(false);
-        }
-      });
-
-    return () => controller.abort();
+    return unsubscribe;
   }, [reloadKey]);
 
+  // Retry the subscription if needed
   function reload() {
     setLoading(true);
     setError(null);
